@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM debian:jessie
 
 MAINTAINER Sandro Salles sandro@snippet.com.br
 
