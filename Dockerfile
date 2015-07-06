@@ -1,11 +1,11 @@
-FROM debian:jessie
+FROM ubuntu:12.04
 
 MAINTAINER Sandro Salles sandro@snippet.com.br
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y openssh-server python-setuptools docker.io && /usr/bin/easy_install supervisor
+RUN apt-get install -y openssh-server python-setuptools && /usr/bin/easy_install supervisor
 
 ADD supervisord.conf /etc/supervisord.conf
 
