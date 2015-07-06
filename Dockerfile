@@ -1,6 +1,13 @@
-FROM sullof/sshd:latest
+FROM ubuntu:12.04
 
 MAINTAINER Sandro Salles sandro@snippet.com.br
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update && apt-get -y upgrade
+RUN apt-get install -y openssh-server python-setuptools && /usr/bin/easy_install supervisor
+
+ADD supervisord.conf /etc/supervisord.conf
 
 # Install Forego
 RUN wget -P /usr/local/bin https://godist.herokuapp.com/projects/ddollar/forego/releases/current/linux-amd64/forego \
@@ -20,4 +27,5 @@ ENV DOCKER_HOST unix:///tmp/docker.sock
 
 RUN chmod +x /app/*.sh
 
+EXPOSE 22
 CMD ["/app/run.sh"]
