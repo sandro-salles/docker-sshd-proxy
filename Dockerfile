@@ -1,4 +1,4 @@
-FROM ubuntu:12.04
+FROM ubuntu:trusty
 
 MAINTAINER Sandro Salles sandro@snippet.com.br
 
