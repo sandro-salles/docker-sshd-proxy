@@ -1,9 +1,9 @@
 # sshd-proxy
 
 ##### This is a container inspired by:
-**[jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy)**
-**[sullof/docker-sshd](https://github.com/sullof/docker-sshd)**
-**[tutum/authorizedkeys](https://github.com/tutumcloud/authorizedkeys/)**
+- **[jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy)**
+- **[sullof/docker-sshd](https://github.com/sullof/docker-sshd)**
+- **[tutum/authorizedkeys](https://github.com/tutumcloud/authorizedkeys/)**
 
 Basically it acts like an ssh proxy/gateway, allowing you to execute bash commands into any container by mapping a ssh-key -- *[see Usage](#usage)* -- to the destination container.
 
