@@ -31,5 +31,4 @@ else
     exit 1
 fi
 
-exec forego start -r
 exec supervisord -n
