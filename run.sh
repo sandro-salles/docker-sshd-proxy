@@ -31,4 +31,4 @@ else
     exit 1
 fi
 
-exec supervisord -n
+exec supervisord -c /etc/supervisor/conf.d/supervisord.conf -n
