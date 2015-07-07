@@ -3,7 +3,7 @@
 mkdir /var/run/sshd
 mkdir -p /root/.ssh
 chmod 700 /root/.ssh
-mv /authorized_keys /root/.ssh/.
+mv /app/authorized_keys /root/.ssh/.
 chmod 600 /root/.ssh/*
 chown -Rf root:root /root/.ssh
 
@@ -31,5 +31,4 @@ else
     exit 1
 fi
 
-exec forego start -r
-exec supervisord -n
+exec supervisord -c /etc/supervisord.conf -n
