@@ -10,7 +10,7 @@ RUN sh -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.
 RUN apt-get update && apt-get -y upgrade
 RUN apt-get install -y openssh-server python-setuptools lxc-docker-1.5.0 && /usr/bin/easy_install supervisor
 
-ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+ADD supervisord.conf /etc/supervisord.conf
 
 # Install Forego
 RUN wget -P /usr/local/bin https://godist.herokuapp.com/projects/ddollar/forego/releases/current/linux-amd64/forego \
