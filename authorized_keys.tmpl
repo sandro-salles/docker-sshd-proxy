@@ -1,4 +1,7 @@
-{{ range $host, $containers := groupByMulti $ "Env.SSHD_PROXY_KEY" "," }}{{ range $container := $containers }}{{ if $container.Env.SSHD_PROXY_KEY }}command="/app/ssh-proxy.sh {{ $container.Name }}" {{ $container.Env.SSHD_PROXY_KEY }}
+{{ range $host, $containers := groupByMulti $ "Env.SSHD_PROXY_KEY" "," }}
+{{ range $container := $containers }}
+{{ if $container.Env.SSHD_PROXY_KEY }}
+command="/app/ssh-proxy.sh {{ $container.Name }}" {{ $container.Env.SSHD_PROXY_KEY }}
 {{ end }}
 {{ end }}
 {{ end }}
