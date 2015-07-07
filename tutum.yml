@@ -1,5 +1,0 @@
-docker-sshd-proxy:
-  image: sandro-salles/docker-sshd-proxy
-  deployment_strategy: every_node
-  environment:
-    - AUTHORIZED_KEYS=**None**
