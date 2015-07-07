@@ -25,10 +25,7 @@ if [ "${AUTHORIZED_KEYS}" != "**None**" ]; then
             echo "=> Adding public key to authorized_keys.tmpl: $x"
             echo "$x" >> /app/authorized_keys.tmpl
         fi
-    done
-
-    cat /app/authorized_keys.tmpl | tr -d "\t\n\r" > /app/authorized_keys.tmpl.tmp && mv /app/authorized_keys.tmpl.tmp /app/authorized_keys.tmpl
-    
+    done    
 else
     echo "ERROR: No authorized keys found in \$AUTHORIZED_KEYS"
     exit 1
