@@ -1,1 +1,7 @@
-{{ range $host, $containers := groupByMulti $ "Env.VIRTUAL_HOST" "," }}{{ range $container := $containers }}{{ if $container.Env.DEPLOYMENT_KEY }}command="export DOCKER_HOST=unix:///tmp/docker.sock && docker exec -it {{$container.Name}} bash", {{$container.Env.DEPLOYMENT_KEY}}{{ end }}{{ end }}{{ end }}
+{{ range $host, $containers := groupByMulti $ "Env.DEPLOYMENT_KEY" "," }}
+	{{ range $container := $containers }}
+		{{ if $container.Env.DEPLOYMENT_KEY }}
+			command="/app/ssh-proxy.sh {{ $container.Name }}" {{ $container.Env.DEPLOYMENT_KEY }}
+		{{ end }}
+	{{ end }}
+{{ end }}
