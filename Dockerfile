@@ -25,7 +25,7 @@ RUN wget https://github.com/jwilder/docker-gen/releases/download/$DOCKER_GEN_VER
 COPY . /app/
 WORKDIR /app/
 
-ENV AUTHORIZED_KEYS **None**
+ENV SSHD_PROXY_KEY **None**
 ENV DOCKER_HOST unix:///tmp/docker.sock
 
 RUN chmod +x /app/*.sh
