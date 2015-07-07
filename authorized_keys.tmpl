@@ -1,13 +1,1 @@
-{{ range $host, $containers := groupByMulti $ "Env.VIRTUAL_HOST" "," }}
-
-{{ range $container := $containers }}
-
-{{ if $container.Env.DEPLOYMENT_KEY }}
-
-from="ssh.{{$container.Env.VIRTUAL_HOST}}", command="docker exec -it {{$container.Name}} bash", {{$container.Env.DEPLOYMENT_KEY}}
-
-{{ end }}
-
-{{ end }}
-
-{{ end }}
+{{ range $host, $containers := groupByMulti $ "Env.VIRTUAL_HOST" "," }}{{ range $container := $containers }}{{ if $container.Env.DEPLOYMENT_KEY }}command="export DOCKER_HOST=unix:///tmp/docker.sock && docker exec -it {{$container.Name}} bash", {{$container.Env.DEPLOYMENT_KEY}}{{ end }}{{ end }}{{ end }}
