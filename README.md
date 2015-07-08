@@ -1,9 +1,9 @@
 # sshd-proxy
 
 ##### This is a container inspired by:
-**[jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy)**
-**[sullof/docker-sshd](https://github.com/sullof/docker-sshd)**
-**[tutum/authorizedkeys](https://github.com/tutumcloud/authorizedkeys/)**
+- **[jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy)**
+- **[sullof/docker-sshd](https://github.com/sullof/docker-sshd)**
+- **[tutum/authorizedkeys](https://github.com/tutumcloud/authorizedkeys/)**
 
 Basically it acts like an ssh proxy/gateway, allowing you to execute bash commands into any container by mapping a ssh-key -- *[see Usage](#usage)* -- to the destination container.
 
@@ -30,3 +30,13 @@ If you want to have ssh access to the ssh-proxy container itself you can pass an
 ### SFTP
 
 As mentioned before, as this container does not depend on or use OpenSSH to access the proxied containers you won't be able to use it to SFTP into them ([nor should you](https://jpetazzo.github.io/2014/06/23/docker-ssh-considered-evil/)).
+
+
+
+### Usage on Tutum.co
+
+Things to remember when using this container on Tutum.co:
+
+1. Add an entry to the volumes section matching `/var/run/docker.sock:/tmp/docker.sock`
+2. Run this container in **privileged mode** as it uses docker internally to bash into the proxied containers
+3. Give it **Full access** on Environment variables/API Roles
