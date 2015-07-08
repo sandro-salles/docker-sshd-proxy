@@ -5,7 +5,7 @@
 - **[sullof/docker-sshd](https://github.com/sullof/docker-sshd)**
 - **[tutum/authorizedkeys](https://github.com/tutumcloud/authorizedkeys/)**
 
-Basically it acts like an ssh proxy/gateway, allowing you to execute bash commands into any container by mapping a ssh-key -- *[see Usage](#usage)* -- to the destination container.
+Basically it acts like an ssh proxy/gateway, allowing you to execute bash commands into any container by mapping a ssh-key (*[see Usage](#usage)*) to the destination container.
 
 There's no need to have OpenSSH installed at the destination since I'm using `docker exec -it $containeridOrName bash` to access the bash.
 
@@ -30,6 +30,8 @@ If you want to have ssh access to the ssh-proxy container itself you can pass an
 ### SFTP
 
 As mentioned before, as this container does not depend on or use OpenSSH to access the proxied containers you won't be able to use it to SFTP into them ([nor should you](https://jpetazzo.github.io/2014/06/23/docker-ssh-considered-evil/)).
+
+
 
 
 
