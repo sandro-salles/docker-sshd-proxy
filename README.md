@@ -22,9 +22,9 @@ Then start any containers you want proxied with an Env var `SSHD_PROXY_KEY=ssh-r
 
     $ docker run -e SSHD_PROXY_KEY=ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIB0Kt3iWRVEH+lW4+H5Tfaa26 ...
 
-If you want to have ssh access to the ssh-proxy container itself you can pass an Env var `AUTHORIZED_KEYS=<your-ow-keys-delimited-by-\n> ...`
+If you want to have ssh access to the ssh-proxy container itself you can pass an Env var `AUTHORIZED_KEYS=<your-ow-keys-delimited-by-comma> ...`
 
-    $ docker run -d -p 22:2222 -v /var/run/docker.sock:/tmp/docker.sock sandrosalles/sshd-proxy -e AUTHORIZED_KEYS=ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIB0Kt3iWRVEH+lW4+H5Tfaa26 ...\nssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIB0Kt3iWRdfsfsdfsVEH+lW6876fsdfasd76fa ...
+    $ docker run -d -p 22:2222 -v /var/run/docker.sock:/tmp/docker.sock sandrosalles/sshd-proxy -e AUTHORIZED_KEYS=ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIB0Kt3iWRVEH+lW4+H5Tfaa26 ...,ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIB0Kt3iWRdfsfsdfsVEH+lW6876fsdfasd76fa ...
 
 
 ### SFTP
