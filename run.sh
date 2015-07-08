@@ -3,7 +3,7 @@
 mkdir /var/run/sshd
 mkdir -p /root/.ssh
 chmod 700 /root/.ssh
-mv /app/authorized_keys /root/.ssh/.
+touch /root/.ssh/authorized_keys
 chmod 600 /root/.ssh/*
 chown -Rf root:root /root/.ssh
 

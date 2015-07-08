@@ -5,7 +5,7 @@
 - **[sullof/docker-sshd](https://github.com/sullof/docker-sshd)**
 - **[tutum/authorizedkeys](https://github.com/tutumcloud/authorizedkeys/)**
 
-Basically it acts like an ssh proxy/gateway, allowing you to execute bash commands into any container by mapping a ssh-key -- *[see Usage](#usage)* -- to the destination container.
+Basically it acts like an ssh proxy/gateway, allowing you to execute bash commands into any container by mapping a ssh-key (*[see Usage](#usage)*) to the destination container.
 
 There's no need to have OpenSSH installed at the destination since I'm using `docker exec -it $containeridOrName bash` to access the bash.
 
